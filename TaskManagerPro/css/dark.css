@@ -1,0 +1,12 @@
+body.dark {
+  --bg: #0f1420;
+  --surface: #171c2c;
+  --surface-2: #1f2438;
+  --text: #e6e8ee;
+  --text-muted: #8b93a7;
+  --border: #262b3f;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(180deg, #0f1420 0%, #0a0e18 100%);
+}
+body.dark .brand .pro,
+body.dark .stat-value { filter: brightness(1.15); }

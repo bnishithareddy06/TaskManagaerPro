@@ -1,0 +1,6 @@
+[
+  { "title": "Welcome to Task Manager Pro 🎉", "priority": "high", "type": "personal", "completed": false },
+  { "title": "Review project structure", "priority": "medium", "type": "office", "completed": false },
+  { "title": "Try dark mode toggle", "priority": "low", "type": "personal", "completed": true },
+  { "title": "Export tasks as JSON", "priority": "medium", "type": "office", "completed": false }
+]

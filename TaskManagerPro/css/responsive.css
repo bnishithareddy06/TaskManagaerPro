@@ -1,0 +1,13 @@
+@media (max-width: 720px) {
+  .app-header { padding: 1rem; }
+  .app-main { padding: 0 1rem; margin: 1rem auto; }
+  .stats-panel { grid-template-columns: repeat(2, 1fr); }
+  .task-form { grid-template-columns: 1fr 1fr; }
+  .task-form button { grid-column: 1 / -1; }
+  .task-item { grid-template-columns: auto 1fr auto; }
+  .task-item .badge.type { display: none; }
+}
+@media (max-width: 420px) {
+  .brand h1 { font-size: 1.05rem; }
+  .header-actions .btn { padding: 0.45rem 0.6rem; font-size: 0.85rem; }
+}

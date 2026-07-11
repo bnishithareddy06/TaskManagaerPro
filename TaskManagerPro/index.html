@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager Pro</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/dark.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">✓</span>
+      <h1>Task Manager <span class="pro">Pro</span></h1>
+    </div>
+    <div class="header-actions">
+      <button id="importBtn" class="btn ghost" title="Import JSON">⬆ Import</button>
+      <button id="exportBtn" class="btn ghost" title="Export JSON">⬇ Export</button>
+      <input type="file" id="importFile" accept="application/json" hidden />
+      <button id="themeToggle" class="btn ghost" title="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="panel stats-panel">
+      <div class="stat"><span class="stat-label">Total</span><span id="statTotal" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label">Active</span><span id="statActive" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label">Done</span><span id="statDone" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label">High Priority</span><span id="statHigh" class="stat-value">0</span></div>
+    </section>
+
+    <section class="panel form-panel">
+      <form id="taskForm" class="task-form">
+        <input id="taskTitle" type="text" placeholder="What needs to be done?" required />
+        <input id="taskDue" type="date" />
+        <select id="taskPriority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <select id="taskType">
+          <option value="personal">Personal</option>
+          <option value="office">Office</option>
+        </select>
+        <button type="submit" class="btn primary">Add Task</button>
+      </form>
+      <p id="formError" class="form-error"></p>
+    </section>
+
+    <section class="panel filters-panel">
+      <input id="searchInput" type="search" placeholder="🔎 Search tasks..." />
+      <div class="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="active">Active</button>
+        <button class="chip" data-filter="completed">Completed</button>
+        <button class="chip" data-filter="high">High</button>
+      </div>
+    </section>
+
+    <section class="panel list-panel">
+      <div id="loading" class="loading hidden">Loading...</div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty-state">No tasks yet — add one above ✨</p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Built with vanilla JS · Modules · Classes · Async · Closures</small>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

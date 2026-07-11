@@ -1,0 +1,123 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+.logo {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white; border-radius: 10px;
+  font-weight: 700; font-size: 1.15rem;
+  box-shadow: var(--shadow);
+}
+.brand h1 { font-size: 1.25rem; letter-spacing: -0.01em; }
+.brand .pro {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-weight: 700;
+}
+.header-actions { display: flex; gap: 0.5rem; }
+
+.app-main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.stat { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+.stat-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.stat-value { font-size: 1.6rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 0.6rem;
+}
+.form-error { color: var(--danger); margin: 0.5rem 0 0; font-size: 0.85rem; min-height: 1em; }
+
+.filters-panel { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.filters-panel input[type="search"] { flex: 1; min-width: 200px; }
+.filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.chip {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+.chip:hover { color: var(--text); }
+.chip.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white; border-color: transparent;
+}
+
+.task-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+.task-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  animation: slideIn 0.25s ease;
+}
+.task-item:hover { transform: translateX(2px); border-color: var(--primary); }
+.task-item.done .task-title { text-decoration: line-through; color: var(--text-muted); }
+.task-check { width: 20px; height: 20px; cursor: pointer; accent-color: var(--primary); }
+.task-body { display: flex; flex-direction: column; gap: 0.15rem; }
+.task-title { font-weight: 600; }
+.task-meta { font-size: 0.78rem; color: var(--text-muted); display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.badge {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.badge.high { background: rgba(239,68,68,0.15); color: var(--danger); }
+.badge.medium { background: rgba(245,158,11,0.15); color: var(--warning); }
+.badge.low { background: rgba(16,185,129,0.15); color: var(--success); }
+.badge.type { background: rgba(99,102,241,0.15); color: var(--primary); }
+
+.empty-state { text-align: center; color: var(--text-muted); padding: 2rem 0; margin: 0; }
+
+.loading { text-align: center; padding: 1rem; color: var(--primary); font-weight: 500; }
+
+.app-footer { text-align: center; padding: 2rem 1rem; color: var(--text-muted); }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
